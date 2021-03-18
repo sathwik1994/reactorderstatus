@@ -1,35 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 import SampleOrder from "./Assets/sampleOrder.PNG";
-import HomeIcon from "./Assets/homeIcon.png";
 import React from "react";
-import MainContentRouter from "./mainContentRouter.js";
-import {Switch} from "react-router-dom";
-import {Route} from "react-router-dom";
-import {Router} from "react-router-dom";
 
-export default class App extends React.Component {
+export default class RecentOrder extends React.Component {
   state = {
-    orderDropdown: "initial"
+    orderDropdown: "Order Status"
   }
 
-  handleChange = e => {
-    this.setState({
-      orderDropdown: e.target.value
-    })
-  }
-
-  clickedonHome(){
-    this.setState({
-      orderDropdown: "initial"
-    })
-  }
   render() {
+      console.log("inside recent order")
     return (
-      <div className="App">
+        <div style={{backgroundColor:"#2d343b"}}>
         <div className="globalnavHeader">
           <div className="headerLeft">
-            <img src={HomeIcon} style={{width:"10%"}} onClick={() => this.clickedonHome()}/>
             <label style={{ marginLeft: "10px", marginRight: "10px" }}>
               Products
             <select style={{ backgroundColor: "transparent", color: "white" }}>
@@ -84,10 +68,10 @@ export default class App extends React.Component {
               <select style={{ backgroundColor: "transparent", color: "white" }}
                 value={this.state.orderDropdown}
                 onChange={this.handleChange}>
-                <option value="initial" style={{color:"black"}}>
+                <option style={{color:"black"}}>
                   Order Status
               </option>
-                <option value="recent" style={{color:"black"}}>
+                <option style={{color:"black"}}>
                   Go to recent Order
               </option>
               </select>
@@ -102,18 +86,11 @@ export default class App extends React.Component {
           </div>
         </div>
         <div className="body">
-        {this.state.orderDropdown=== "initial" ?
           <label style={{position:"absolute", top:"50%", left:"33vw", width:"33vw"}}>
-            Select order details from the order status menu on the top
+            You are in details page
           </label>
-          :
-          <label style={{position:"absolute", top:"50%", left:"33vw", width:"33vw"}}>
-            No order data available. Click the home icon on top left to go back to home page 
-          </label>
-          }
         </div>
-        
-      </div>
+        </div>
     );
   }
 }

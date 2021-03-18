@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,9 +24,75 @@
   color: white;
 }
 
+.body {
+  background-color: #2d343b;
+  min-height: 93vh;
+  overflow: hidden;
+}
+
 .App-link {
   color: #61dafb;
 }
+
+.globalnavHeader{
+  min-height: 6vh;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  /* position: relative; */
+}
+
+.headerLeft{
+  min-height: 6vh;
+  display: flex;
+  min-width: 33vw;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.headerCenter{
+  min-height: 6vh;
+  display: flex;
+  min-width: 26vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-wrap: wrap;
+}
+
+.headerRight{
+  min-height: 6vh;
+  display: flex;
+  min-width: 40vw;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  float: right;
+}
+
+.orderStatusDropDown{
+  min-height: 25vh;
+  min-width: 25vh;
+  background-color: red;
+}
+
+/* .headerLeft{
+  display: flex;
+  width: 33vw;
+  flex-direction: row;
+} */
 
 @keyframes App-logo-spin {
   from {
